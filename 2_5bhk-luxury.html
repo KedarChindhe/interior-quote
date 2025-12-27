@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>2.5 BHK Luxury – Interior Quotation Pune</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <img src="assets/img/logo.png" alt="Logo" class="logo">
+          <span class="brand-name">Interior Quotation</span>
+        </div>
+        <nav class="quote-nav">
+          <a href="plans-2_5bhk.html" class="link-back">← 2.5 BHK Plans</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container quote-wrapper">
+          <div class="quote-content">
+            <h1 class="quote-title" id="twoFiveLuxuryTitle">
+              2.5 BHK: Luxury Plan – ₹16.2 Lakhs*
+            </h1>
+            <p class="quote-subtitle" id="twoFiveLuxurySubtitle">
+              Luxury interiors with rich finishes, panelling and a designer study / multipurpose room.
+            </p>
+
+            <div class="quote-block">
+              <h2>Rooms Covered</h2>
+              <ul>
+                <li>Entrance / Foyer</li>
+                <li>Living room</li>
+                <li>Kitchen</li>
+                <li>Master bedroom</li>
+                <li>Children / guest bedroom</li>
+                <li>Study / multipurpose room</li>
+                <li>Dining / common basin area</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Entrance</h2>
+              <ul>
+                <li>Designer shoe unit with panelling, mirror & lights</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Living Room</h2>
+              <ul>
+                <li>Full wall TV unit with panelling & hidden storage</li>
+                <li>Feature wall with fluted / groove / textured finish</li>
+                <li>Decor niches / shelves with lighting</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Kitchen</h2>
+              <ul>
+                <li>Full modular kitchen with premium hardware & corner units</li>
+                <li>High‑gloss / profile shutters as per selection</li>
+                <li>Loft plus tall unit / pantry</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Dining Area</h2>
+              <ul>
+                <li>Designer dining setup with crockery / bar unit</li>
+                <li>Panelling / mirror work behind dining</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Master Bedroom</h2>
+              <ul>
+                <li>Bed with upholstered headboard & storage</li>
+                <li>Full height wardrobe with accessories</li>
+                <li>Dressing + study / work zone</li>
+                <li>Wall panelling with band lighting</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Children / Guest Bedroom</h2>
+              <ul>
+                <li>Wardrobe with loft and internal accessories</li>
+                <li>Study table / work desk with shelves</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Study / Multipurpose Room</h2>
+              <ul>
+                <li>Designer study unit with storage & display shelves</li>
+                <li>Sofa‑cum‑bed / lounger as per layout</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Specification</h2>
+              <ul>
+                <li>BWP / BWR plywood / HDHMR as per area</li>
+                <li>Premium laminate / veneer‑look finishes</li>
+                <li>Soft‑close hardware, tandem channels, designer handles</li>
+                <li>Profile / strip lighting in wardrobes, TV unit & kitchen</li>
+                <li>Premium emulsion + texture / highlight walls</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Other Work</h2>
+              <ul>
+                <li>Designer false ceiling in living, bedrooms & study</li>
+                <li>Spot, cove and chandelier points as per design</li>
+              </ul>
+            </div>
+
+            <p class="quote-note" id="twoFiveLuxuryNote">
+              *Pricing is indicative and may vary based on exact measurements,
+              site condition, material brand selection and final design approval.
+            </p>
+          </div>
+
+          <aside class="quote-summary">
+            <div class="summary-card">
+              <h3>2.5 BHK Luxury</h3>
+              <p class="summary-price" id="twoFiveLuxurySummary">
+                Approx. budget: ₹16.2 Lakhs*
+              </p>
+              <p class="summary-line" id="twoFiveLuxuryArea">
+                City / Area: Pune
+              </p>
+              <p class="summary-line">
+                Suitable for: premium own homes with dedicated study
+              </p>
+              <a href="plans-2_5bhk.html" class="btn btn-full">Back to Plans</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>© <span id="year"></span> Interior Quotation – Pune</small>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      const params = new URLSearchParams(window.location.search);
+      const area = params.get('area') || 'Pune';
+
+      function get25BhkLuxuryPrice(areaName) {
+        const a = areaName.toLowerCase();
+
+        if (a.includes('wagholi') || a.includes('moshi') || a.includes('undri')) {
+          return '₹15.0 Lakhs*';
+        }
+        if (
+          a.includes('wakad') ||
+          a.includes('hinjewadi') ||
+          a.includes('hadapsar')
+        ) {
+          return '₹16.2 Lakhs*';
+        }
+        return '₹17.5 Lakhs*';
+      }
+
+      const priceText = get25BhkLuxuryPrice(area);
+
+      const titleEl = document.getElementById('twoFiveLuxuryTitle');
+      const summaryEl = document.getElementById('twoFiveLuxurySummary');
+      const areaEl = document.getElementById('twoFiveLuxuryArea');
+      const subtitleEl = document.getElementById('twoFiveLuxurySubtitle');
+
+      if (titleEl) {
+        titleEl.textContent = '2.5 BHK: Luxury Plan – ' + priceText;
+      }
+      if (summaryEl) {
+        summaryEl.textContent = 'Approx. budget: ' + priceText;
+      }
+      if (areaEl) {
+        areaEl.textContent = 'City / Area: ' + area;
+      }
+      if (subtitleEl) {
+        subtitleEl.textContent =
+          'Luxury interiors with rich finishes, panelling and a designer study / multipurpose room in ' +
+          area +
+          '.';
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Interior Quotation – Pune</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <img src="assets/img/logo.png" alt="Logo" class="logo">
+          <span class="brand-name">Interior Quotation</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- CITY / AREA SELECTION -->
+      <section class="section">
+        <div class="container">
+          <h1 class="section-title">Pune Interior Quotation</h1>
+          <p class="section-subtitle">
+            Select your area in Pune and BHK type to view interior quotation plans.
+          </p>
+
+          <form class="filter-form" id="filterForm">
+            <div class="form-group">
+              <label for="city">City</label>
+              <select id="city" disabled>
+                <option value="pune">Pune</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="area">Select Area</label>
+              <select id="area">
+                <option value="">Choose area</option>
+                <option value="Wakad">Wakad</option>
+                <option value="Hinjewadi">Hinjewadi</option>
+                <option value="Baner">Baner</option>
+                <option value="Kharadi">Kharadi</option>
+                <option value="Wagholi">Wagholi</option>
+                <option value="Koregaon Park">Koregaon Park</option>
+                <option value="Hadapsar">Hadapsar</option>
+                <option value="Viman Nagar">Viman Nagar</option>
+              </select>
+            </div>
+          </form>
+
+          <p class="note">You will choose plan & price; this site only shows structured quotation.</p>
+        </div>
+      </section>
+
+      <!-- BHK SELECTION -->
+      <section class="section section-alt">
+        <div class="container">
+          <h2 class="section-title">Select Your BHK</h2>
+
+          <div class="card-grid">
+            <!-- 1BHK -->
+            <article class="card">
+              <img src="assets/img/1bhk-plan.png" alt="1 BHK plan" class="card-img">
+
+              <h3>1 BHK</h3>
+              <p>Best suited for compact homes, single or couple living.</p>
+              <button class="btn" onclick="goToPlans('1bhk')">View Plans</button>
+            </article>
+
+            <!-- 2BHK -->
+            <article class="card">
+              <img src="assets/img/2bhk-plan.png" alt="2BHK plan" class="card-img">
+              <h3>2 BHK</h3>
+              <p>Ideal for small families with separate kids / guest room.</p>
+              <button class="btn" onclick="goToPlans('2bhk')">View Plans</button>
+            </article>
+
+            <!-- 2.5BHK -->
+            <article class="card">
+              <img src="assets/img/25bhk-plan.png" alt="2.5BHK plan" class="card-img">
+              <h3>2.5 BHK</h3>
+              <p>Extra study / multipurpose room for flexible usage.</p>
+              <button class="btn" onclick="goToPlans('2_5bhk')">View Plans</button>
+            </article>
+
+            <!-- 3BHK -->
+            <article class="card">
+              <img src="assets/img/3bhk-plan.png" alt="3BHK plan" class="card-img">
+              <h3>3 BHK</h3>
+              <p>Spacious homes with dedicated bedrooms for family.</p>
+              <button class="btn" onclick="goToPlans('3bhk')">View Plans</button>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>© <span id="year"></span> Interior Quotation – Pune</small>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      function goToPlans(bhkType) {
+        const area = document.getElementById('area').value || 'Pune';
+        // Area future me query‑string se use kar sakta hai
+        if (bhkType === '1bhk') location.href = 'plans-1bhk.html?area=' + encodeURIComponent(area);
+        if (bhkType === '2bhk') location.href = 'plans-2bhk.html?area=' + encodeURIComponent(area);
+        if (bhkType === '2_5bhk') location.href = 'plans-2_5bhk.html?area=' + encodeURIComponent(area);
+        if (bhkType === '3bhk') location.href = 'plans-3bhk.html?area=' + encodeURIComponent(area);
+      }
+    </script>
+  </body>
+</html>
+

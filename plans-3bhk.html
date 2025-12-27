@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>3 BHK Plans – Pune Interior Quotation</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <img src="assets/img/logo.png" alt="Logo" class="logo">
+          <span class="brand-name">Interior Quotation</span>
+        </div>
+        <a href="index.html" class="link-back">← Back to Home</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <h1 class="section-title">3 BHK – Plans</h1>
+          <p class="section-subtitle">
+            Select an interior package for your 3 BHK home in Pune.
+          </p>
+
+          <div class="card-grid">
+            <article class="card plan-card">
+              <img src="assets/img/3bhk-plan.png" alt="3 BHK Essential" class="card-img">
+              <p class="plan-tag">Essential</p>
+              <h3>3 BHK Essential</h3>
+              <p class="plan-price">Starting from ₹9.5 Lakhs*</p>
+              <ul class="plan-points">
+                <li>Living room</li>
+                <li>3 Bedrooms</li>
+                <li>Kitchen</li>
+                <li>2/3 Bathrooms</li>
+              </ul>
+              <a href="3bhk-essential.html" class="btn">View Quote</a>
+            </article>
+
+            <article class="card plan-card">
+              <img src="assets/img/3bhk-plan.png" alt="3 BHK Premium" class="card-img">
+              <p class="plan-tag">Premium</p>
+              <h3>3 BHK Premium</h3>
+              <p class="plan-price">Starting from ₹12.8 Lakhs*</p>
+              <ul class="plan-points">
+                <li>Living room</li>
+                <li>3 Bedrooms</li>
+                <li>Kitchen</li>
+                <li>Bathrooms + storage</li>
+              </ul>
+              <a href="3bhk-premium.html" class="btn">View Quote</a>
+            </article>
+
+            <article class="card plan-card">
+              <img src="assets/img/3bhk-plan.png" alt="3 BHK Luxury" class="card-img">
+              <p class="plan-tag">Luxury</p>
+              <h3>3 BHK Luxury</h3>
+              <p class="plan-price">Starting from ₹17.5 Lakhs*</p>
+              <ul class="plan-points">
+                <li>Living room</li>
+                <li>3 Bedrooms</li>
+                <li>Kitchen</li>
+                <li>Bathrooms + study / media</li>
+              </ul>
+              <a href="3bhk-luxury.html" class="btn">View Quote</a>
+            </article>
+          </div>
+
+          <p class="note">
+            *Final price depends on material selection and exact site measurements.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>© <span id="year"></span> Interior Quotation – Pune</small>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+      const params = new URLSearchParams(window.location.search);
+      const area = params.get('area') || 'Pune';
+
+      const subtitle = document.querySelector('.section-subtitle');
+      if (subtitle) {
+        subtitle.textContent =
+          'Select an interior package for your 3 BHK home in ' + area + '.';
+      }
+
+      function getPriceSet(areaName) {
+        const a = areaName.toLowerCase();
+
+        if (a.includes('wagholi') || a.includes('moshi') || a.includes('undri')) {
+          return {
+            essential: 'Starting from ₹8.9 Lakhs*',
+            premium: 'Starting from ₹11.9 Lakhs*',
+            luxury: 'Starting from ₹16.2 Lakhs*'
+          };
+        }
+
+        if (
+          a.includes('wakad') ||
+          a.includes('hinjewadi') ||
+          a.includes('hadapsar')
+        ) {
+          return {
+            essential: 'Starting from ₹9.5 Lakhs*',
+            premium: 'Starting from ₹12.8 Lakhs*',
+            luxury: 'Starting from ₹17.5 Lakhs*'
+          };
+        }
+
+        return {
+          essential: 'Starting from ₹10.6 Lakhs*',
+          premium: 'Starting from ₹13.9 Lakhs*',
+          luxury: 'Starting from ₹19.2 Lakhs*'
+        };
+      }
+
+      const prices = getPriceSet(area);
+      const cards = document.querySelectorAll('.plan-card .plan-price');
+      if (cards[0]) cards[0].textContent = prices.essential;
+      if (cards[1]) cards[1].textContent = prices.premium;
+      if (cards[2]) cards[2].textContent = prices.luxury;
+
+      document.querySelectorAll('.plan-card a.btn').forEach((btn) => {
+        const href = btn.getAttribute('href');
+        btn.setAttribute('href', href + '?area=' + encodeURIComponent(area));
+      });
+    </script>
+  </body>
+</html>

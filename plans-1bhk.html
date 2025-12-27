@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>1 BHK Plans – Pune Interior Quotation</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <img src="assets/img/logo.png" alt="Logo" class="logo">
+          <span class="brand-name">Interior Quotation</span>
+        </div>
+        <a href="index.html" class="link-back">← Back to Home</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <h1 class="section-title">1 BHK – Plans</h1>
+          <p class="section-subtitle">
+            Select an interior package for your 1 BHK home in Pune.
+          </p>
+
+          <div class="card-grid">
+            <!-- Essential -->
+            <article class="card plan-card">
+              <img src="assets/img/1bhk-plan.png" alt="1 BHK Essential" class="card-img">
+              <p class="plan-tag">Essential</p>
+              <h3>1 BHK Essential</h3>
+              <p class="plan-price">Starting from ₹4.8 Lakhs*</p>
+
+              <ul class="plan-points">
+                <li>1 Living room</li>
+                <li>1 Bedroom</li>
+                <li>1 Kitchen</li>
+                <li>1 Bathroom</li>
+              </ul>
+
+              <a href="1bhk-essential.html" class="btn">View Quote</a>
+            </article>
+
+            <!-- Premium -->
+            <article class="card plan-card">
+              <img src="assets/img/1bhk-plan.png" alt="1 BHK Premium" class="card-img">
+              <p class="plan-tag">Premium</p>
+              <h3>1 BHK Premium</h3>
+              <p class="plan-price">Starting from ₹6.2 Lakhs*</p>
+
+              <ul class="plan-points">
+                <li>1 Living room</li>
+                <li>1 Bedroom</li>
+                <li>1 Kitchen</li>
+                <li>1 Bathroom</li>
+              </ul>
+
+              <a href="1bhk-premium.html" class="btn">View Quote</a>
+            </article>
+
+            <!-- Luxury -->
+            <article class="card plan-card">
+              <img src="assets/img/1bhk-plan.png" alt="1 BHK Luxury" class="card-img">
+              <p class="plan-tag">Luxury</p>
+              <h3>1 BHK Luxury</h3>
+              <p class="plan-price">Starting from ₹7.9 Lakhs*</p>
+
+              <ul class="plan-points">
+                <li>1 Living room</li>
+                <li>1 Bedroom</li>
+                <li>1 Kitchen</li>
+                <li>1 Bathroom</li>
+              </ul>
+
+              <a href="1bhk-luxury.html" class="btn">View Quote</a>
+            </article>
+          </div>
+
+          <p class="note">
+            *Final price depends on material selection and exact site measurements.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>© <span id="year"></span> Interior Quotation – Pune</small>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // URL se area read karo: ?area=Baner
+      const params = new URLSearchParams(window.location.search);
+      const area = params.get('area') || 'Pune';
+
+      // Subtitle me area dikhana
+      const subtitle = document.querySelector('.section-subtitle');
+      if (subtitle) {
+        subtitle.textContent =
+          'Select an interior package for your 1 BHK home in ' + area + '.';
+      }
+
+      // Plans ke price elements
+      const priceSpanEssential = document.querySelector(
+        '.plan-card:nth-child(1) .plan-price'
+      );
+      const priceSpanPremium = document.querySelector(
+        '.plan-card:nth-child(2) .plan-price'
+      );
+      const priceSpanLuxury = document.querySelector(
+        '.plan-card:nth-child(3) .plan-price'
+      );
+
+      // Area wise price set
+      function getPriceSet(areaName) {
+        const a = areaName.toLowerCase();
+
+        // Affordable belt
+        if (a.includes('wagholi') || a.includes('moshi') || a.includes('undri')) {
+          return {
+            essential: 'Starting from ₹4.2 Lakhs*',
+            premium: 'Starting from ₹5.6 Lakhs*',
+            luxury: 'Starting from ₹7.2 Lakhs*'
+          };
+        }
+
+        // Mid belt
+        if (
+          a.includes('wakad') ||
+          a.includes('hinjewadi') ||
+          a.includes('hadapsar')
+        ) {
+          return {
+            essential: 'Starting from ₹4.8 Lakhs*',
+            premium: 'Starting from ₹6.2 Lakhs*',
+            luxury: 'Starting from ₹7.9 Lakhs*'
+          };
+        }
+
+        // Premium belt – default (Baner, Kharadi, Viman Nagar, KP etc.)
+        return {
+          essential: 'Starting from ₹5.5 Lakhs*',
+          premium: 'Starting from ₹7.1 Lakhs*',
+          luxury: 'Starting from ₹9.0 Lakhs*'
+        };
+      }
+
+      const prices = getPriceSet(area);
+
+      if (priceSpanEssential) priceSpanEssential.textContent = prices.essential;
+      if (priceSpanPremium) priceSpanPremium.textContent = prices.premium;
+      if (priceSpanLuxury) priceSpanLuxury.textContent = prices.luxury;
+
+      // Detail quote pages ko area bhi bhejo
+      document.querySelectorAll('.plan-card a.btn').forEach((btn) => {
+        const href = btn.getAttribute('href');
+        btn.setAttribute('href', href + '?area=' + encodeURIComponent(area));
+      });
+    </script>
+  </body>
+</html>

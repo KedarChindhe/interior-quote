@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>3 BHK Premium – Interior Quotation Pune</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <img src="assets/img/logo.png" alt="Logo" class="logo">
+          <span class="brand-name">Interior Quotation</span>
+        </div>
+        <nav class="quote-nav">
+          <a href="plans-3bhk.html" class="link-back">← 3 BHK Plans</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container quote-wrapper">
+          <div class="quote-content">
+            <h1 class="quote-title" id="threePremiumTitle">
+              3 BHK: Premium Plan – ₹12.8 Lakhs*
+            </h1>
+            <p class="quote-subtitle" id="threePremiumSubtitle">
+              Premium interiors with better storage and finishes for a 3 BHK family home.
+            </p>
+
+            <div class="quote-block">
+              <h2>Rooms Covered</h2>
+              <ul>
+                <li>Entrance / Foyer</li>
+                <li>Living room</li>
+                <li>Kitchen</li>
+                <li>Master bedroom</li>
+                <li>Children bedroom</li>
+                <li>Guest / parents bedroom</li>
+                <li>Dining / common basin area</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Entrance</h2>
+              <ul>
+                <li>Shoe unit with overhead cabinets and mirror panel</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Living Room</h2>
+              <ul>
+                <li>TV unit with drawers, open shelves and panelling</li>
+                <li>Highlight wall with laminate / texture finish</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Kitchen</h2>
+              <ul>
+                <li>Full modular kitchen with tandem drawers & bottle pull‑outs</li>
+                <li>Overhead units till loft height</li>
+                <li>Combination of laminate + glass shutters</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Dining Area</h2>
+              <ul>
+                <li>6 seater dining table with crockery ledge / unit</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Master Bedroom</h2>
+              <ul>
+                <li>Hydraulic storage bed</li>
+                <li>Wardrobe with loft and organisers</li>
+                <li>Dressing + work / study top</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Children Bedroom</h2>
+              <ul>
+                <li>Wardrobe with loft</li>
+                <li>Study table / work desk</li>
+                <li>Wall shelves / book storage</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Guest / Parents Bedroom</h2>
+              <ul>
+                <li>Wardrobe with loft</li>
+                <li>Simple console / seating as per layout</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Specification</h2>
+              <ul>
+                <li>BWP / BWR plywood for kitchen & wet areas</li>
+                <li>18mm plywood / HDHMR for wardrobes and TV unit</li>
+                <li>Soft‑close hinges & telescopic channels</li>
+                <li>Premium laminate range externally</li>
+                <li>Electrical work for extra points, LED strips & profiles</li>
+                <li>Wall paint in premium emulsion (putty + two coats)</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Other Work</h2>
+              <ul>
+                <li>False ceiling in living + passage</li>
+                <li>LED spot & cove lights as per design</li>
+              </ul>
+            </div>
+
+            <p class="quote-note" id="threePremiumNote">
+              *Pricing is indicative and may vary based on exact measurements,
+              site condition, material brand selection and final design approval.
+            </p>
+          </div>
+
+          <aside class="quote-summary">
+            <div class="summary-card">
+              <h3>3 BHK Premium</h3>
+              <p class="summary-price" id="threePremiumSummary">
+                Approx. budget: ₹12.8 Lakhs*
+              </p>
+              <p class="summary-line" id="threePremiumArea">
+                City / Area: Pune
+              </p>
+              <p class="summary-line">
+                Suitable for: own homes with upgraded finish
+              </p>
+              <a href="plans-3bhk.html" class="btn btn-full">Back to Plans</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>© <span id="year"></span> Interior Quotation – Pune</small>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      const params = new URLSearchParams(window.location.search);
+      const area = params.get('area') || 'Pune';
+
+      function get3BhkPremiumPrice(areaName) {
+        const a = areaName.toLowerCase();
+
+        if (a.includes('wagholi') || a.includes('moshi') || a.includes('undri')) {
+          return '₹11.9 Lakhs*';
+        }
+        if (
+          a.includes('wakad') ||
+          a.includes('hinjewadi') ||
+          a.includes('hadapsar')
+        ) {
+          return '₹12.8 Lakhs*';
+        }
+        return '₹13.9 Lakhs*';
+      }
+
+      const priceText = get3BhkPremiumPrice(area);
+
+      const titleEl = document.getElementById('threePremiumTitle');
+      const summaryEl = document.getElementById('threePremiumSummary');
+      const areaEl = document.getElementById('threePremiumArea');
+      const subtitleEl = document.getElementById('threePremiumSubtitle');
+
+      if (titleEl) {
+        titleEl.textContent = '3 BHK: Premium Plan – ' + priceText;
+      }
+      if (summaryEl) {
+        summaryEl.textContent = 'Approx. budget: ' + priceText;
+      }
+      if (areaEl) {
+        areaEl.textContent = 'City / Area: ' + area;
+      }
+      if (subtitleEl) {
+        subtitleEl.textContent =
+          'Premium interiors with better storage and finishes for a 3 BHK family home in ' +
+          area +
+          '.';
+      }
+    </script>
+  </body>
+</html>

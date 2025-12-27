@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>2 BHK Essential – Interior Quotation Pune</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <img src="assets/img/logo.png" alt="Logo" class="logo">
+          <span class="brand-name">Interior Quotation</span>
+        </div>
+        <nav class="quote-nav">
+          <a href="plans-2bhk.html" class="link-back">← 2 BHK Plans</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container quote-wrapper">
+          <!-- LEFT: DETAILS -->
+          <div class="quote-content">
+            <h1 class="quote-title" id="twoEssentialTitle">
+              2 BHK: Essential Plan – ₹7.5 Lakhs*
+            </h1>
+            <p class="quote-subtitle" id="twoEssentialSubtitle">
+              Entry level interior package for a standard 2 BHK family home in Pune.
+            </p>
+
+            <div class="quote-block">
+              <h2>Rooms Covered</h2>
+              <ul>
+                <li>Entrance / Foyer</li>
+                <li>Living room</li>
+                <li>Kitchen</li>
+                <li>Master bedroom</li>
+                <li>Children / guest bedroom</li>
+                <li>Dining / common basin area</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Entrance</h2>
+              <ul>
+                <li>Shoe rack / storage unit at entrance</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Living Room</h2>
+              <ul>
+                <li>TV unit with storage and open shelves</li>
+                <li>Sofa back panel / simple feature wall design</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Kitchen</h2>
+              <ul>
+                <li>Modular base and wall units (L‑shape / parallel as per site)</li>
+                <li>Drawer units with cutlery / thali / tandem drawers</li>
+                <li>Laminate finish shutters with edge banding</li>
+                <li>Overhead cabinets with some glass shutters</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Dining Area</h2>
+              <ul>
+                <li>4 seater dining table or foldable breakfast counter (as per layout)</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Master Bedroom</h2>
+              <ul>
+                <li>1 bed (queen / king) with storage</li>
+                <li>Wardrobe with openable / sliding doors</li>
+                <li>Side tables and simple dressing unit</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Children / Guest Bedroom</h2>
+              <ul>
+                <li>Wardrobe with basic internal partition</li>
+                <li>Study / work table (as per space)</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Specification</h2>
+              <ul>
+                <li>18mm plywood / blockboard for all fixed furniture</li>
+                <li>BWR / equivalent waterproof ply in kitchen</li>
+                <li>Outer finish in laminate as per selected shade</li>
+                <li>Soft‑close hinges and basic hardware fittings</li>
+                <li>Standard electrical work related to furniture points</li>
+                <li>Interior wall paint in tractor / equivalent emulsion</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Other Work</h2>
+              <ul>
+                <li>Basic false ceiling in living room (simple design)</li>
+                <li>Concealed LED spot lights where required</li>
+              </ul>
+            </div>
+
+            <p class="quote-note" id="twoEssentialNote">
+              *Pricing is indicative and may vary based on exact measurements,
+              site condition, material brand selection and final design approval.
+            </p>
+          </div>
+
+          <!-- RIGHT: SUMMARY -->
+          <aside class="quote-summary">
+            <div class="summary-card">
+              <h3>2 BHK Essential</h3>
+              <p class="summary-price" id="twoEssentialSummary">
+                Approx. budget: ₹7.5 Lakhs*
+              </p>
+              <p class="summary-line" id="twoEssentialArea">
+                City / Area: Pune
+              </p>
+              <p class="summary-line">
+                Suitable for: compact family / budget homes
+              </p>
+              <a href="plans-2bhk.html" class="btn btn-full">Back to Plans</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>© <span id="year"></span> Interior Quotation – Pune</small>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      const params = new URLSearchParams(window.location.search);
+      const area = params.get('area') || 'Pune';
+
+      function get2BhkEssentialPrice(areaName) {
+        const a = areaName.toLowerCase();
+
+        if (a.includes('wagholi') || a.includes('moshi') || a.includes('undri')) {
+          return '₹6.8 Lakhs*';
+        }
+
+        if (
+          a.includes('wakad') ||
+          a.includes('hinjewadi') ||
+          a.includes('hadapsar')
+        ) {
+          return '₹7.5 Lakhs*';
+        }
+
+        // Premium belt default
+        return '₹8.4 Lakhs*';
+      }
+
+      const priceText = get2BhkEssentialPrice(area);
+
+      const titleEl = document.getElementById('twoEssentialTitle');
+      const summaryEl = document.getElementById('twoEssentialSummary');
+      const areaEl = document.getElementById('twoEssentialArea');
+      const subtitleEl = document.getElementById('twoEssentialSubtitle');
+
+      if (titleEl) {
+        titleEl.textContent = '2 BHK: Essential Plan – ' + priceText;
+      }
+      if (summaryEl) {
+        summaryEl.textContent = 'Approx. budget: ' + priceText;
+      }
+      if (areaEl) {
+        areaEl.textContent = 'City / Area: ' + area;
+      }
+      if (subtitleEl) {
+        subtitleEl.textContent =
+          'Entry level interior package for a standard 2 BHK family home in ' +
+          area +
+          '.';
+      }
+    </script>
+  </body>
+</html>

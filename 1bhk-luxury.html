@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>1 BHK Luxury – Interior Quotation Pune</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <img src="assets/img/logo.png" alt="Logo" class="logo">
+          <span class="brand-name">Interior Quotation</span>
+        </div>
+        <nav class="quote-nav">
+          <a href="plans-1bhk.html" class="link-back">← 1 BHK Plans</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container quote-wrapper">
+          <div class="quote-content">
+            <h1 class="quote-title" id="luxuryTitle">
+              1 BHK: Luxury Plan – ₹7.9 Lakhs*
+            </h1>
+            <p class="quote-subtitle" id="luxurySubtitle">
+              Premium interior package with rich finishes, panelling and lighting for 1 BHK homes.
+            </p>
+
+            <div class="quote-block">
+              <h2>Rooms Covered</h2>
+              <ul>
+                <li>Entrance / Foyer</li>
+                <li>Living room</li>
+                <li>Kitchen</li>
+                <li>Bedroom</li>
+                <li>Dining / common basin area</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Entrance</h2>
+              <ul>
+                <li>Designer shoe unit with fluted / laminate panelling</li>
+                <li>Mirror plus decorative lights</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Living Room</h2>
+              <ul>
+                <li>Full wall TV unit with panelling and hidden storage</li>
+                <li>Feature wall with fluted / groove / textured finish</li>
+                <li>Accent shelves / niches for decor</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Kitchen</h2>
+              <ul>
+                <li>Full modular kitchen with premium hardware & corner solutions</li>
+                <li>Profile shutters / high‑gloss laminates as per selection</li>
+                <li>Loft plus tall unit / pantry unit where possible</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Dining Area</h2>
+              <ul>
+                <li>Designer dining table setup with crockery / bar unit</li>
+                <li>Wall panelling / mirror work behind dining</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Bedroom</h2>
+              <ul>
+                <li>Bed with upholstered headboard and storage</li>
+                <li>Full height wardrobe with loft and internal accessories</li>
+                <li>Dressing + study / work table as per design</li>
+                <li>Wall panelling / band lighting behind bed</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Specification</h2>
+              <ul>
+                <li>All furniture in branded BWP / BWR plywood / HDHMR (as per area)</li>
+                <li>Premium laminate / veneer look finishes (as per selection)</li>
+                <li>Soft‑close hardware, telescopic / tandem channels, premium handles</li>
+                <li>Profile / strip lighting for wardrobes, TV unit & kitchen</li>
+                <li>Premium emulsion + texture / highlight paint where required</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Other Work</h2>
+              <ul>
+                <li>Designer false ceiling for living + bedroom with layers</li>
+                <li>Spot, cove and chandelier points as per design</li>
+              </ul>
+            </div>
+
+            <p class="quote-note" id="luxuryNote">
+              *Pricing is indicative and may vary based on exact measurements,
+              site condition, material brand selection and final design approval.
+            </p>
+          </div>
+
+          <aside class="quote-summary">
+            <div class="summary-card">
+              <h3>1 BHK Luxury</h3>
+              <p class="summary-price" id="luxurySummary">
+                Approx. budget: ₹7.9 Lakhs*
+              </p>
+              <p class="summary-line" id="luxuryArea">City / Area: Pune</p>
+              <p class="summary-line">Suitable for: premium own homes</p>
+              <a href="plans-1bhk.html" class="btn btn-full">Back to Plans</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>© <span id="year"></span> Interior Quotation – Pune</small>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      const params = new URLSearchParams(window.location.search);
+      const area = params.get('area') || 'Pune';
+
+      function getLuxuryPrice(areaName) {
+        const a = areaName.toLowerCase();
+
+        if (a.includes('wagholi') || a.includes('moshi') || a.includes('undri')) {
+          return '₹7.2 Lakhs*';
+        }
+        if (
+          a.includes('wakad') ||
+          a.includes('hinjewadi') ||
+          a.includes('hadapsar')
+        ) {
+          return '₹7.9 Lakhs*';
+        }
+        return '₹9.0 Lakhs*'; // premium belt
+      }
+
+      const priceText = getLuxuryPrice(area);
+
+      const titleEl = document.getElementById('luxuryTitle');
+      const summaryEl = document.getElementById('luxurySummary');
+      const areaEl = document.getElementById('luxuryArea');
+      const subtitleEl = document.getElementById('luxurySubtitle');
+
+      if (titleEl) {
+        titleEl.textContent = '1 BHK: Luxury Plan – ' + priceText;
+      }
+      if (summaryEl) {
+        summaryEl.textContent = 'Approx. budget: ' + priceText;
+      }
+      if (areaEl) {
+        areaEl.textContent = 'City / Area: ' + area;
+      }
+      if (subtitleEl) {
+        subtitleEl.textContent =
+          'Premium interior package with rich finishes, panelling and lighting for 1 BHK homes in ' +
+          area +
+          '.';
+      }
+    </script>
+  </body>
+</html>

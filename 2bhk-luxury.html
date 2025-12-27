@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>2 BHK Luxury – Interior Quotation Pune</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <img src="assets/img/logo.png" alt="Logo" class="logo">
+          <span class="brand-name">Interior Quotation</span>
+        </div>
+        <nav class="quote-nav">
+          <a href="plans-2bhk.html" class="link-back">← 2 BHK Plans</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container quote-wrapper">
+          <div class="quote-content">
+            <h1 class="quote-title" id="twoLuxuryTitle">
+              2 BHK: Luxury Plan – ₹12.5 Lakhs*
+            </h1>
+            <p class="quote-subtitle" id="twoLuxurySubtitle">
+              Premium interiors with rich finishes, panelling and lighting for spacious 2 BHK homes.
+            </p>
+
+            <div class="quote-block">
+              <h2>Rooms Covered</h2>
+              <ul>
+                <li>Entrance / Foyer</li>
+                <li>Living room</li>
+                <li>Kitchen</li>
+                <li>Master bedroom</li>
+                <li>Children / guest bedroom</li>
+                <li>Dining / common basin area</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Entrance</h2>
+              <ul>
+                <li>Designer shoe unit with panelling and mirror</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Living Room</h2>
+              <ul>
+                <li>Full wall TV unit with panelling & hidden storage</li>
+                <li>Feature wall with fluted / groove work or texture</li>
+                <li>Display shelves / niches for decor</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Kitchen</h2>
+              <ul>
+                <li>Full modular kitchen with premium hardware & corner units</li>
+                <li>High‑gloss / profile shutters as per design</li>
+                <li>Loft plus tall unit / pantry space</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Dining Area</h2>
+              <ul>
+                <li>Designer dining setup with crockery / bar unit</li>
+                <li>Panelling / mirror work behind dining</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Master Bedroom</h2>
+              <ul>
+                <li>Bed with upholstered headboard & storage</li>
+                <li>Full height wardrobe with accessories</li>
+                <li>Dressing + study / work space</li>
+                <li>Wall panelling with band lighting</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Children / Guest Bedroom</h2>
+              <ul>
+                <li>Wardrobe with loft and internal accessories</li>
+                <li>Study table / work desk with shelves</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Specification</h2>
+              <ul>
+                <li>BWP / BWR plywood / HDHMR for all furniture (as per area)</li>
+                <li>Premium laminate / veneer‑look finishes</li>
+                <li>Soft‑close hardware, tandem channels, designer handles</li>
+                <li>Profile / strip lighting in wardrobes, TV unit & kitchen</li>
+                <li>Premium emulsion + texture / highlight walls</li>
+              </ul>
+            </div>
+
+            <div class="quote-block">
+              <h2>Other Work</h2>
+              <ul>
+                <li>Designer false ceiling for living + bedrooms</li>
+                <li>Spot, cove and chandelier points as per design</li>
+              </ul>
+            </div>
+
+            <p class="quote-note" id="twoLuxuryNote">
+              *Pricing is indicative and may vary based on exact measurements,
+              site condition, material brand selection and final design approval.
+            </p>
+          </div>
+
+          <aside class="quote-summary">
+            <div class="summary-card">
+              <h3>2 BHK Luxury</h3>
+              <p class="summary-price" id="twoLuxurySummary">
+                Approx. budget: ₹12.5 Lakhs*
+              </p>
+              <p class="summary-line" id="twoLuxuryArea">
+                City / Area: Pune
+              </p>
+              <p class="summary-line">
+                Suitable for: premium own homes
+              </p>
+              <a href="plans-2bhk.html" class="btn btn-full">Back to Plans</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>© <span id="year"></span> Interior Quotation – Pune</small>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      const params = new URLSearchParams(window.location.search);
+      const area = params.get('area') || 'Pune';
+
+      function get2BhkLuxuryPrice(areaName) {
+        const a = areaName.toLowerCase();
+
+        if (a.includes('wagholi') || a.includes('moshi') || a.includes('undri')) {
+          return '₹11.2 Lakhs*';
+        }
+        if (
+          a.includes('wakad') ||
+          a.includes('hinjewadi') ||
+          a.includes('hadapsar')
+        ) {
+          return '₹12.5 Lakhs*';
+        }
+        return '₹13.8 Lakhs*';
+      }
+
+      const priceText = get2BhkLuxuryPrice(area);
+
+      const titleEl = document.getElementById('twoLuxuryTitle');
+      const summaryEl = document.getElementById('twoLuxurySummary');
+      const areaEl = document.getElementById('twoLuxuryArea');
+      const subtitleEl = document.getElementById('twoLuxurySubtitle');
+
+      if (titleEl) {
+        titleEl.textContent = '2 BHK: Luxury Plan – ' + priceText;
+      }
+      if (summaryEl) {
+        summaryEl.textContent = 'Approx. budget: ' + priceText;
+      }
+      if (areaEl) {
+        areaEl.textContent = 'City / Area: ' + area;
+      }
+      if (subtitleEl) {
+        subtitleEl.textContent =
+          'Premium interiors with rich finishes, panelling and lighting for spacious 2 BHK homes in ' +
+          area +
+          '.';
+      }
+    </script>
+  </body>
+</html>
